@@ -452,6 +452,14 @@
         color: #cccccc;
       }
 
+      /* Updated project buttons container */
+      .project-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+      }
+
       .project-layer a {
         display: inline-flex;
         justify-content: center;
@@ -461,6 +469,7 @@
         background: #ffffff;
         border-radius: 50%;
         text-decoration: none;
+        transition: all 0.3s ease;
       }
 
       .project-layer a i {
@@ -469,8 +478,26 @@
         transition: all 0.3s ease;
       }
 
+      .project-layer a:hover {
+        background: linear-gradient(45deg, #00aeff, #a200ff);
+        transform: scale(1.1);
+      }
+
       .project-layer a:hover i {
-        color: #00aeff;
+        color: #ffffff;
+      }
+
+      /* Different button styles */
+      .project-layer a.github-btn {
+        background: #333333;
+      }
+
+      .project-layer a.github-btn i {
+        color: #ffffff;
+      }
+
+      .project-layer a.github-btn:hover {
+        background: #555555;
       }
 
       .project-content {
@@ -638,6 +665,11 @@
         .projects-container {
           grid-template-columns: 1fr;
         }
+
+        .project-buttons {
+          flex-direction: row;
+          gap: 0.8rem;
+        }
       }
 
       @media (max-width: 450px) {
@@ -663,6 +695,11 @@
         .skills-container {
           grid-template-columns: 1fr;
         }
+
+        .project-buttons {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
       }
     </style>
   </head>
@@ -685,7 +722,10 @@
       <div class="home-content">
         <h1>Hello, Saya <span>Muhammad Rafii</span></h1>
         <p>
-          Mahasiswa semester 6 Sistem Informasi di Universitas Trilogi, dengan skill di Web Development, UI/UX, dan Jaringan Komputer. Memiliki kemampuan bekerja dalam tim, public speaking, kepemimpinan, dan cepat beradaptasi.
+          Mahasiswa semester 6 Sistem Informasi di Universitas Trilogi, dengan
+          skill di Web Development, UI/UX, dan Jaringan Komputer. Memiliki
+          kemampuan bekerja dalam tim, public speaking, kepemimpinan, dan cepat
+          beradaptasi.
         </p>
         <div class="btn-container">
           <a href="#projects" class="btn">Project Saya</a>
@@ -713,9 +753,6 @@
             Pengalaman dalam membangun situs web responsif dan dinamis
             menggunakan HTML, CSS, PHP, dan Frameworks modern (Laravel).
           </p>
-          <!-- <div class="skill-bar">
-            <div class="skill-percentage" data-width="64%"></div>
-          </div> -->
         </div>
 
         <div class="skills-box">
@@ -726,9 +763,6 @@
             memastikan UX yang optimal melalui navigasi intuitif, alur pengguna
             yang jelas, dan pendekatan human-centered design.
           </p>
-          <!-- <div class="skill-bar">
-            <div class="skill-percentage" data-width="72%"></div>
-          </div> -->
         </div>
 
         <div class="skills-box">
@@ -738,48 +772,18 @@
             Kompeten di Microsoft Word, Excel, dan PowerPoint untuk mendukung
             kebutuhan administrasi, analisis data, dan pembuatan presentasi.
           </p>
-          <!-- <div class="skill-bar">
-            <div class="skill-percentage" data-width="87%"></div>
-          </div> -->
         </div>
 
         <div class="skills-box">
           <i class="fa-brands fa-figma"></i>
           <h3>Figma</h3>
           <p>
-            Mempunyai Pengalaman di Figma dalam perancangan UI/UX, mulai dari wireframe
-            hingga prototipe interaktif yang mendukung kolaborasi desain secara
-            efisien.
+            Mempunyai Pengalaman di Figma dalam perancangan UI/UX, mulai dari
+            wireframe hingga prototipe interaktif yang mendukung kolaborasi
+            desain secara efisien.
           </p>
-          <!-- <div class="skill-bar">
-            <div class="skill-percentage" data-width="78%"></div>
-          </div> -->
         </div>
-
-        <!-- <div class="skills-box">
-          <i class="fas fa-database"></i>
-          <h3>Backend Development</h3>
-          <p>
-            Creating server-side applications and APIs to power web applications
-            effectively.
-          </p>
-          <div class="skill-bar">
-            <div class="skill-percentage" data-width="70%"></div>
-          </div>
-        </div>
-
-        <div class="skills-box">
-          <i class="fas fa-tools"></i>
-          <h3>Dev Tools</h3>
-          <p>
-            Proficient with various development tools, version control systems,
-            and deployment processes.
-          </p>
-          <div class="skill-bar">
-            <div class="skill-percentage" data-width="85%"></div>
-          </div>
-        </div>
-      </div> -->
+      </div>
     </section>
 
     <!-- Projects Section -->
@@ -796,9 +800,14 @@
                 organisasi kemahasiswaan yang menjalankan fungsi eksekutif
                 Universitas Trilogi
               </p>
-              <a href="https://bemtrilogi.com/"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
+              <div class="project-buttons">
+                <a href="https://bemtrilogi.com/" class="live-btn">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <!-- <a href="#" class="github-btn">
+                  <i class="fab fa-github"></i>
+                </a> -->
+              </div>
             </div>
           </div>
           <div class="project-content">
@@ -824,10 +833,20 @@
                 solusi edukasi IT yang menyediakan pembelajaran terstruktur di
                 bidang Front-end, Back-end, UI/UX, dan Data Analyst.
               </p>
-              <a
-                href="https://www.figma.com/proto/ZbKo2Q7TjRPvdOvJ8iOGW1?node-id=0-1&t=16voo7FfR4RCB0qf-6"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
+              <div class="project-buttons">
+                <a
+                  href="https://www.figma.com/proto/ZbKo2Q7TjRPvdOvJ8iOGW1?node-id=0-1&t=16voo7FfR4RCB0qf-6"
+                  class="live-btn"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://www.figma.com/design/ZbKo2Q7TjRPvdOvJ8iOGW1/Codingin?node-id=0-1&t=HEcy0jk2017w7t8p-1"
+                  class="live-btn"
+                >
+                  <i class="fa-brands fa-figma"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="project-content">
@@ -854,10 +873,20 @@
                 "LOOP" yang dirancang untuk mendukung pengelolaan sampah botol
                 plastik secara berkelanjutan.
               </p>
-              <a
-                href="https://www.figma.com/proto/zjhud4wDhQRnRf41yOoEEJ?node-id=0-1&t=T6d9og9OAvenLnC0-6"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
+              <div class="project-buttons">
+                <a
+                  href="https://www.figma.com/proto/zjhud4wDhQRnRf41yOoEEJ?node-id=0-1&t=T6d9og9OAvenLnC0-6"
+                  class="live-btn"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://www.figma.com/design/zjhud4wDhQRnRf41yOoEEJ/LOOP?node-id=0-1&t=HEcy0jk2017w7t8p-1"
+                  class="live-btn"
+                >
+                  <i class="fa-brands fa-figma"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="project-content">
